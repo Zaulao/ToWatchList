@@ -11,5 +11,13 @@
    <td><label>Priority </label></td>
    <td><input [(ngModel)]="movie.priority" ></td>
 </tr>
-<td><button (click)="gravar(aluno)">Adicionar</button></td>
+<tr>
+  <button (click)="gravar(movie)">Adicionar</button>
+</tr>
+<ul>
+  <li *ngFor="let a of movies">
+      <span>{{a.name}}</span>,
+      <span>{{a.priority}}</span>
+  </li>
+  </ul>
 </table>

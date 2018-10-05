@@ -4,6 +4,14 @@ export class MovieService {
 
   gravar(movie: Movie): void {
      this.movie.push(movie);
-     this.movie.sort(function(a, b){return a.priority < b.priority ? 1:0});
+     this.movie.sort(function (a, b) {
+        if (a.priority <= b.priority) {
+          return 1;
+        }
+        if (a.priority > b.priority) {
+          return 0;
+        }
+        return -1
+      });
   }
 }
