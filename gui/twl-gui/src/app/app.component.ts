@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
+import { Movie } from './movie';
+import { MovieService } from './movie.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +12,9 @@ import { NgModule } from '@angular/core';
 export class AppComponent {
   title = 'app';
   movie: Movie = {name: "", priority:0};
-}
-export class Movie {
-  name: string;
-  priority: number;
+  movieService = new MovieService();
+  gravar(a: Movie): void {
+    this.movieService.gravar(a);
+    this.movie = {name: "", priority: 0};
+ }
 }
